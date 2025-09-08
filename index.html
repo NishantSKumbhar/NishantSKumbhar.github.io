@@ -5,57 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nishant | .NET Developer Portfolio</title>
   <style>
+    /* Blue Shades Inspired by SQL Server Management Studio */
     :root {
-      --primary-dark: #1E2C46;   /* Dark blue */
-      --primary-light: #2F4C73;  /* Lighter blue */
-      --accent: #CC2927;         /* SQL Server red */
-      --white: #FFFFFF;
-      --gray: #F4F4F4;
-      --text: #333333;
+      --blue-dark: #1E2C46;    /* Deep blue */
+      --blue-medium: #2F4C73;  /* Medium blue */
+      --blue-light: #D9E3F0;   /* Light blue */
+      --blue-soft: #EEF3FA;    /* Softer light */
+      --text-dark: #111111;
+      --text-light: #FFFFFF;
+      --border-gray: #C0C0C0;  /* 90s-style borders */
     }
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(160deg, var(--primary-dark), var(--primary-light));
-      color: var(--text);
-      line-height: 1.6;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(160deg, var(--blue-dark), var(--blue-medium));
+      color: var(--text-dark);
     }
 
     header {
-      background: linear-gradient(160deg, var(--primary-dark), var(--primary-light));
-      color: var(--white);
+      background: var(--blue-dark);
+      color: var(--text-light);
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 3rem 1rem;
+      border-bottom: 3px solid var(--blue-medium);
     }
 
     header h1 {
       font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.9;
     }
 
     nav {
-      background: var(--white);
-      border-bottom: 3px solid var(--accent);
+      background: var(--blue-light);
+      border-top: 1px solid var(--border-gray);
+      border-bottom: 1px solid var(--border-gray);
       display: flex;
       justify-content: center;
-      padding: 0.8rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 0.6rem;
     }
 
     nav a {
-      margin: 0 1.2rem;
+      margin: 0 1rem;
       text-decoration: none;
-      color: var(--accent);
-      font-weight: 600;
+      color: var(--blue-dark);
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -63,8 +62,9 @@
     }
 
     section {
-      padding: 3rem 12%;
-      background: var(--gray);
+      padding: 2.5rem 12%;
+      background: var(--blue-soft);
+      border-bottom: 1px solid var(--border-gray);
     }
 
     section:nth-child(even) {
@@ -72,68 +72,70 @@
     }
 
     h2 {
-      color: var(--accent);
+      color: var(--blue-dark);
+      font-size: 1.6rem;
       margin-bottom: 1rem;
-      border-left: 5px solid var(--accent);
-      padding-left: 10px;
-      font-size: 1.8rem;
+      border-bottom: 2px solid var(--blue-medium);
+      padding-bottom: 0.3rem;
     }
 
     .card {
       background: var(--white);
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-gray);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .skills-list, .project-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+    /* Skills in classic table style */
+    table.skills {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
     }
 
-    .tag {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white);
-      padding: 0.4rem 0.9rem;
-      margin: 0.3rem;
-      border-radius: 20px;
+    table.skills th, table.skills td {
+      border: 1px solid var(--border-gray);
+      padding: 0.6rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    table.skills th {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+    }
+
+    pre {
+      background: var(--blue-dark);
+      color: var(--text-light);
+      padding: 1rem;
+      overflow-x: auto;
+      border: 1px solid var(--border-gray);
+      font-family: Consolas, monospace;
       font-size: 0.9rem;
     }
 
     footer {
-      background: var(--primary-dark);
-      color: var(--white);
+      background: var(--blue-dark);
+      color: var(--text-light);
       text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 0.5rem;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      padding: 1.2rem;
+      font-size: 0.85rem;
+      border-top: 2px solid var(--blue-medium);
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Nishant Kumbhar</h1>
-    <p>.NET Core Developer | Backend API Specialist | Automation and Data Analytics Enthusiast</p>
+    <p>.NET Core Developer | Backend & API Specialist | Automation & Analytics</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#code">Code Example</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -141,69 +143,74 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am a core <strong>.NET Developer</strong> with proven expertise in <strong>API development</strong> and 
-        <strong>backend technologies</strong>. My focus is on delivering scalable, high-quality solutions that 
-        integrate seamlessly into enterprise environments.  
-        Alongside my primary skills, I have practical exposure to <strong>Power BI</strong>, <strong>Blue Prism</strong>, 
-        and <strong>Power Automate</strong>, which enables me to contribute to business intelligence, automation, 
-        and process optimization initiatives.  
-        I am dedicated to continuous learning and adopting modern technologies to solve business challenges effectively.
+        I am a <strong>.NET Core Developer</strong> focused on <strong>backend technologies</strong> and <strong>API development</strong>.
+        My work includes delivering scalable solutions, automation with <strong>Blue Prism</strong> and <strong>Power Automate</strong>, 
+        and business analytics with <strong>Power BI</strong>.  
+        I take a structured approach to problem solving, while continuously learning new tools and technologies.
       </p>
     </div>
   </section>
 
   <section id="skills">
     <h2>Technical Skills</h2>
-    <div class="skills-list">
-      <div class="card">
-        <h3>Core Development</h3>
-        <span class="tag">C#</span>
-        <span class="tag">.NET Core</span>
-        <span class="tag">ASP.NET Web API</span>
-        <span class="tag">Entity Framework</span>
-        <span class="tag">SQL Server</span>
-      </div>
-      <div class="card">
-        <h3>Frontend Development</h3>
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Angular / React (learning)</span>
-      </div>
-      <div class="card">
-        <h3>Automation and Analytics</h3>
-        <span class="tag">Power BI</span>
-        <span class="tag">Blue Prism</span>
-        <span class="tag">Power Automate</span>
-      </div>
-      <div class="card">
-        <h3>Other Competencies</h3>
-        <span class="tag">Git/GitHub</span>
-        <span class="tag">CI/CD</span>
-        <span class="tag">Azure Cloud (learning)</span>
-      </div>
+    <div class="card">
+      <table class="skills">
+        <tr>
+          <th>Category</th>
+          <th>Technologies</th>
+        </tr>
+        <tr>
+          <td>Core Development</td>
+          <td>C#, .NET Core, ASP.NET Web API, Entity Framework, SQL Server</td>
+        </tr>
+        <tr>
+          <td>Frontend</td>
+          <td>HTML, CSS, JavaScript, Angular/React (learning)</td>
+        </tr>
+        <tr>
+          <td>Automation</td>
+          <td>Blue Prism, Power Automate</td>
+        </tr>
+        <tr>
+          <td>Analytics</td>
+          <td>Power BI, Reporting solutions</td>
+        </tr>
+        <tr>
+          <td>Other</td>
+          <td>Git/GitHub, CI/CD, Azure Cloud (learning)</td>
+        </tr>
+      </table>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-list">
-      <div class="card">
-        <h3>Enterprise API Development</h3>
-        <p>Developed REST APIs using .NET Core for seamless data exchange across enterprise applications.</p>
-      </div>
-      <div class="card">
-        <h3>Business Intelligence Dashboards</h3>
-        <p>Designed interactive dashboards in Power BI for monitoring automation performance and business KPIs.</p>
-      </div>
-      <div class="card">
-        <h3>Automation Solutions</h3>
-        <p>Implemented end-to-end Blue Prism bots to automate high-volume, repetitive business processes.</p>
-      </div>
-      <div class="card">
-        <h3>Process Workflows</h3>
-        <p>Created approval workflows and notifications using Power Automate integrated with SharePoint.</p>
-      </div>
+    <div class="card">
+      <p><strong>Enterprise API Development:</strong> Designed and implemented REST APIs for automation and integrations.</p>
+    </div>
+    <div class="card">
+      <p><strong>Business Dashboards:</strong> Built interactive Power BI dashboards to track KPIs and automation performance.</p>
+    </div>
+    <div class="card">
+      <p><strong>Automation Solutions:</strong> Developed end-to-end Blue Prism bots for repetitive business processes.</p>
+    </div>
+    <div class="card">
+      <p><strong>Process Workflows:</strong> Implemented approval workflows using Power Automate and SharePoint.</p>
+    </div>
+  </section>
+
+  <section id="code">
+    <h2>Code Example</h2>
+    <div class="card">
+      <p>
+        Every developer has encountered this. If you have not, you probably have not written enough code yet:
+      </p>
+      <pre>
+System.NullReferenceException: Object reference not set to an instance of an object.
+      </pre>
+      <p>
+        I ensure production stability by handling exceptions, null checks, and applying logging practices.
+      </p>
     </div>
   </section>
 
@@ -217,7 +224,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Nishant Kumbhar | Portfolio Website</p>
+    <p>© 2025 Nishant Kumbhar | Professional Portfolio</p>
   </footer>
 </body>
 </html>
