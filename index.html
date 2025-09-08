@@ -13,21 +13,22 @@
       --blue-soft: #EEF3FA;    /* Softer light */
       --text-dark: #111111;
       --text-light: #FFFFFF;
-      --border-gray: #C0C0C0;  /* 90s-style borders */
+      --border-gray: #C0C0C0;
     }
 
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(160deg, var(--blue-dark), var(--blue-medium));
-      color: var(--text-dark);
+      background: var(--blue-dark);
+      color: var(--text-light); /* Default text is light for contrast */
+      line-height: 1.6;
     }
 
     header {
       background: var(--blue-dark);
       color: var(--text-light);
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 2rem;
       border-bottom: 3px solid var(--blue-medium);
     }
 
@@ -42,18 +43,20 @@
     }
 
     nav {
-      background: var(--blue-light);
-      border-top: 1px solid var(--border-gray);
-      border-bottom: 1px solid var(--border-gray);
+      background: var(--blue-medium);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--blue-dark);
       display: flex;
       justify-content: center;
       padding: 0.6rem;
     }
 
     nav a {
-      margin: 0 1rem;
+      margin: 0 1.5rem;
       text-decoration: none;
-      color: var(--blue-dark);
+      color: var(--text-light);
       font-weight: bold;
     }
 
@@ -64,11 +67,13 @@
     section {
       padding: 2.5rem 12%;
       background: var(--blue-soft);
-      border-bottom: 1px solid var(--border-gray);
+      border-top: 2px solid var(--border-gray);
+      border-bottom: 2px solid var(--border-gray);
+      color: var(--text-dark); /* Sections use dark text for readability */
     }
 
     section:nth-child(even) {
-      background: var(--white);
+      background: var(--blue-light);
     }
 
     h2 {
@@ -80,10 +85,11 @@
     }
 
     .card {
-      background: var(--white);
+      background: #fff;
       border: 1px solid var(--border-gray);
       padding: 1.2rem;
       margin-bottom: 1.5rem;
+      color: var(--text-dark);
     }
 
     /* Skills in classic table style */
@@ -106,7 +112,7 @@
     }
 
     pre {
-      background: var(--blue-dark);
+      background: var(--blue-medium);
       color: var(--text-light);
       padding: 1rem;
       overflow-x: auto;
@@ -146,7 +152,6 @@
         I am a <strong>.NET Core Developer</strong> focused on <strong>backend technologies</strong> and <strong>API development</strong>.
         My work includes delivering scalable solutions, automation with <strong>Blue Prism</strong> and <strong>Power Automate</strong>, 
         and business analytics with <strong>Power BI</strong>.  
-        I take a structured approach to problem solving, while continuously learning new tools and technologies.
       </p>
     </div>
   </section>
