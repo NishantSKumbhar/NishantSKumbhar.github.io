@@ -2,33 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Nishant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #0078d7, #005a9e);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      padding: 0.8rem;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0078d7;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem 10%;
+    }
+    h2 {
+      color: #005a9e;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .skills-list, .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #0078d7;
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      margin: 0.3rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    footer {
+      background: #005a9e;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Hello, I’m Nishant 👋</h1>
-    <p>.NET Developer | RPA | Power BI</p>
+    <h1>👋 Hi, I'm Nishant</h1>
+    <p>.NET Core Developer | API & Backend Specialist | Automation & Analytics Enthusiast</p>
   </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I specialize in .NET full stack development, automation, and data analytics.</p>
+    <div class="card">
+      <p>
+        I am a passionate <b>.NET Core Developer</b> with strong expertise in backend technologies and API development. 
+        Along with my core skills, I have worked with <b>Power BI</b>, <b>Blue Prism</b>, and <b>Power Automate</b>, 
+        giving me a diverse exposure to automation and analytics.  
+        I am always ready to <b>learn new technologies</b> and apply them to real-world business problems.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="card">
+        <h3>Core Development</h3>
+        <span class="tag">C#</span>
+        <span class="tag">.NET Core</span>
+        <span class="tag">ASP.NET Web API</span>
+        <span class="tag">Entity Framework</span>
+        <span class="tag">SQL Server</span>
+      </div>
+      <div class="card">
+        <h3>Frontend</h3>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Angular / React (learning)</span>
+      </div>
+      <div class="card">
+        <h3>Automation & Analytics</h3>
+        <span class="tag">Power BI</span>
+        <span class="tag">Blue Prism</span>
+        <span class="tag">Power Automate</span>
+      </div>
+      <div class="card">
+        <h3>Other Skills</h3>
+        <span class="tag">Git/GitHub</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Azure Cloud (learning)</span>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li>🔹 Blue Prism Bot Deployment Dashboard</li>
-      <li>🔹 Power BI Analytics for Operations</li>
-      <li>🔹 SQL AdventureWorks Case Studies</li>
-    </ul>
+    <div class="project-list">
+      <div class="card">
+        <h3>API Development</h3>
+        <p>Developed REST APIs in .NET Core for automation and integration with enterprise systems.</p>
+      </div>
+      <div class="card">
+        <h3>Power BI Dashboards</h3>
+        <p>Designed interactive dashboards for bot monitoring and business insights.</p>
+      </div>
+      <div class="card">
+        <h3>Blue Prism Automations</h3>
+        <p>Worked on end-to-end RPA bots to automate repetitive business processes.</p>
+      </div>
+      <div class="card">
+        <h3>Power Automate Flows</h3>
+        <p>Created workflows for approvals, notifications, and SharePoint data management.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <p>GitHub: <a href="https://github.com/your-username">github.com/your-username</a></p>
+    <div class="card">
+      <p>📧 Email: your-email@example.com</p>
+      <p>🔗 GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
+      <p>💼 LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+    </div>
   </section>
+
+  <footer>
+    <p>© 2025 Nishant | Built with ❤️ using HTML & CSS</p>
+  </footer>
 </body>
 </html>
