@@ -1,235 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nishant | .NET Developer Portfolio</title>
-  <style>
-    /* Blue Shades Inspired by SQL Server Management Studio */
-    :root {
-      --blue-dark: #1E2C46;    /* Deep blue */
-      --blue-medium: #2F4C73;  /* Medium blue */
-      --blue-light: #D9E3F0;   /* Light blue */
-      --blue-soft: #EEF3FA;    /* Softer light */
-      --text-dark: #111111;
-      --text-light: #FFFFFF;
-      --border-gray: #C0C0C0;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--blue-dark);
-      color: var(--text-light); /* Default text is light for contrast */
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--blue-dark);
-      color: var(--text-light);
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      border-bottom: 3px solid var(--blue-medium);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    nav {
-      background: var(--blue-medium);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 2px solid var(--blue-dark);
-      display: flex;
-      justify-content: center;
-      padding: 0.6rem;
-    }
-
-    nav a {
-      margin: 0 1.5rem;
-      text-decoration: none;
-      color: var(--text-light);
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 2.5rem 12%;
-      background: var(--blue-soft);
-      border-top: 2px solid var(--border-gray);
-      border-bottom: 2px solid var(--border-gray);
-      color: var(--text-dark); /* Sections use dark text for readability */
-    }
-
-    section:nth-child(even) {
-      background: var(--blue-light);
-    }
-
-    h2 {
-      color: var(--blue-dark);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--blue-medium);
-      padding-bottom: 0.3rem;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid var(--border-gray);
-      padding: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-dark);
-    }
-
-    /* Skills in classic table style */
-    table.skills {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    table.skills th, table.skills td {
-      border: 1px solid var(--border-gray);
-      padding: 0.6rem;
-      text-align: left;
-      font-size: 0.95rem;
-    }
-
-    table.skills th {
-      background: var(--blue-light);
-      color: var(--blue-dark);
-    }
-
-    pre {
-      background: var(--blue-medium);
-      color: var(--text-light);
-      padding: 1rem;
-      overflow-x: auto;
-      border: 1px solid var(--border-gray);
-      font-family: Consolas, monospace;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      background: var(--blue-dark);
-      color: var(--text-light);
-      text-align: center;
-      padding: 1.2rem;
-      font-size: 0.85rem;
-      border-top: 2px solid var(--blue-medium);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#245edb">
+<meta name="description" content="Nishant Kumbhar — .NET backend engineer building reliable APIs, data-intensive systems, and cloud-ready applications.">
+<title>Nishant Kumbhar — .NET Backend Engineer</title>
+<style>
+/* ============================================================
+   NISHANT KUMBHAR — CSS-ONLY, WINDOWS XP-INSPIRED PORTFOLIO
+   One HTML file. No JavaScript, frameworks, fonts, or images.
+   Scroll reveals use the modern CSS scroll-driven animation API
+   with a graceful, visible-by-default fallback.
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --xp-blue: #245edb;
+  --xp-blue-deep: #123b9a;
+  --xp-title-light: #3b8df4;
+  --xp-silver: #ece9d8;
+  --xp-silver-light: #f8f7f0;
+  --xp-border: #7f9db9;
+  --ink: #15243a;
+  --muted: #4b6076;
+  --green: #16843d;
+  --green-light: #37c857;
+  --paper: #fffef8;
+  --shadow: 0 22px 60px rgba(0, 23, 77, .35);
+  --window-width: 1120px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 26px; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 18px 82px;
+  color: var(--ink);
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  background: #1689c9;
+  background-image:
+    radial-gradient(ellipse at 18% 5%, rgba(255,255,255,.27), transparent 27%),
+    linear-gradient(165deg, #0b75c9 0%, #3caddb 42%, #9bd8e7 62%, #69b53f 63%, #2c8b37 100%);
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 55% -10% -15%;
+  pointer-events: none;
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+  background: linear-gradient(180deg, rgba(134, 207, 76, .92), #378a25 76%);
+  transform: rotate(-4deg);
+  filter: blur(1px);
+}
+a { color: #0645ad; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: #c02c12; }
+a:focus-visible, summary:focus-visible { outline: 3px dotted #073b93; outline-offset: 4px; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+::selection { color: white; background: #245edb; }
+.skip-link { position: absolute; top: -100px; left: 12px; background: #fff; padding: 10px 14px; z-index: 100; }
+.skip-link:focus { top: 12px; }
+.desktop-shortcuts {
+  position: fixed; left: 16px; top: 18px; z-index: 0;
+  display: grid; gap: 22px; color: white; text-align: center;
+  text-shadow: 1px 1px 2px #16456c; font-size: 11px; width: 76px;
+}
+.desktop-shortcuts a { color: white; text-decoration: none; display: grid; justify-items: center; gap: 4px; padding: 5px 2px; border: 1px solid transparent; }
+.desktop-shortcuts a:hover, .desktop-shortcuts a:focus-visible { background: rgba(34, 94, 187, .35); border: 1px dotted rgba(255,255,255,.85); color: white; }
+.desktop-icon { font-size: 28px; line-height: 1.2; filter: drop-shadow(1px 2px 1px rgba(0,0,0,.28)); }
+.window {
+  width: min(var(--window-width), calc(100% - 100px));
+  margin: 14px auto 0;
+  position: relative;
+  z-index: 1;
+  background: var(--xp-silver);
+  border: 1px solid #0a246a;
+  border-radius: 8px 8px 3px 3px;
+  box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,.75);
+  overflow: hidden;
+}
+.titlebar {
+  min-height: 39px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 5px 7px 5px 12px;
+  color: white;
+  background: linear-gradient(180deg, #4f9af8 0%, #2675ed 18%, #1555d5 48%, #276be0 74%, #0b3cba 100%);
+  border-bottom: 1px solid #0a329a;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.45);
+  font-weight: bold;
+}
+.titlebar-name { display: flex; gap: 9px; align-items: center; min-width: 0; }
+.app-mark { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 3px; background: linear-gradient(135deg, #fff 0 20%, #f44336 20% 46%, #35ad4b 46% 71%, #f7d333 71%); color: #123b9a; text-shadow: none; font-size: 11px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); }
+.window-controls { display: flex; gap: 3px; align-self: flex-start; }
+.window-controls span { display: grid; place-items: center; width: 22px; height: 20px; border: 1px solid #fff; border-radius: 3px; color: #fff; font-size: 12px; line-height: 1; background: linear-gradient(180deg,#8bc6ff,#2070d9 54%,#1553bd); box-shadow: 1px 1px 0 rgba(0,0,0,.25); }
+.window-controls span:last-child { background: linear-gradient(180deg,#ffb29d,#e74b2f 55%,#b91610); }
+.menubar { padding: 5px 12px; font-size: 12px; background: linear-gradient(#fffef8, #ece9d8); border-bottom: 1px solid #d2cfbf; color: #222; }
+.menubar span { display: inline-block; margin-right: 16px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid #b9b6a8; box-shadow: inset 0 1px white; background: #f6f4e9; }
+.toolbar-btn { color: #233c5b; text-decoration: none; font-size: 12px; padding: 4px 8px; border: 1px solid transparent; border-radius: 3px; }
+.toolbar-btn:hover { border-color: #a4c7e8; background: #dceeff; }
+.addressbar { display: flex; gap: 8px; align-items: center; border-bottom: 1px solid #c8c5b5; background: #f8f7f0; padding: 6px 12px; font-size: 12px; color: #5b5b5b; }
+.address-label { flex: 0 0 auto; }
+.address-field { padding: 3px 9px; background: white; border: 1px solid #a4a194; box-shadow: inset 1px 1px 2px #dedbd0; flex: 1; min-width: 0; color: #333; overflow-wrap: anywhere; }
+.address-field strong { color: #2c5e22; }
+.page-content { padding: 28px clamp(18px, 4vw, 48px) 38px; background: linear-gradient(180deg, #f8f7f0, #fffef8 22%, #fffef8); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(210px, .65fr); gap: 34px; align-items: center; min-height: 420px; padding: 18px 0 34px; }
+.kicker { color: #17499a; text-transform: uppercase; letter-spacing: .13em; font-size: 11px; font-weight: bold; display: flex; gap: 9px; align-items: center; }
+.kicker::before { content: ""; width: 28px; height: 3px; background: var(--green); display: inline-block; }
+h1 { font-size: clamp(38px, 5.8vw, 68px); letter-spacing: -.065em; line-height: 1.02; margin: 14px 0 10px; color: #12356c; }
+.hero h1 span { display: block; color: #1764b8; }
+.hero-lede { color: #344c68; font-size: clamp(16px, 2vw, 19px); max-width: 650px; line-height: 1.7; margin: 20px 0 22px; }
+.hero-lede strong { color: #122f5b; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 22px; }
+.xp-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 15px; text-decoration: none; color: #172c4d; font-weight: bold; font-size: 13px; border: 1px solid #7f9db9; border-radius: 4px; background: linear-gradient(#fffef8, #e4e2d5); box-shadow: inset 1px 1px white, 1px 1px 1px rgba(0,0,0,.12); transition: transform .18s ease, box-shadow .18s ease, filter .18s ease; }
+.xp-button:hover { color: #0c388a; filter: brightness(1.03); transform: translateY(-2px); box-shadow: inset 1px 1px white, 0 4px 10px rgba(28,77,145,.18); }
+.xp-button.primary { color: white; border-color: #1748a9; background: linear-gradient(#55a2fa,#2a71df 48%,#1452c8); text-shadow: 1px 1px rgba(0,0,0,.22); }
+.xp-button.primary:hover { color: white; }
+.status-line { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 12px; color: #50637a; }
+.status-line span::before { content: "●"; color: var(--green); margin-right: 7px; font-size: 10px; }
+.profile-card { background: linear-gradient(145deg, #eaf4ff, #fff 60%, #e4f7e9); border: 1px solid #9ab6d5; border-radius: 5px; padding: 15px; box-shadow: 3px 4px 0 #d8d3c4, inset 0 0 0 3px rgba(255,255,255,.75); transform: rotate(1deg); }
+.profile-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 1px solid #b8cde3; font-weight: bold; color: #214d89; font-size: 12px; }
+.online-dot { width: 9px; height: 9px; display: inline-block; border-radius: 50%; background: #2bb84a; box-shadow: 0 0 0 3px #d1f2d5; margin-right: 6px; }
+.avatar { width: 104px; height: 104px; margin: 4px auto 13px; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 1px #9cb6d1, 0 5px 14px rgba(28,76,138,.15); display: grid; place-items: center; background: linear-gradient(140deg, #c8e5ff, #e7edff 50%, #c8f3de); color: #2458a8; font-size: 34px; font-weight: bold; letter-spacing: -3px; }
+.profile-card h2 { text-align: center; font-size: 17px; color: #1a3e75; margin: 0; }
+.profile-card .role { text-align: center; color: #62748a; font-size: 12px; margin: 3px 0 15px; }
+.mini-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.mini-stat { border: 1px solid #c5d4e5; background: rgba(255,255,255,.72); padding: 8px; border-radius: 3px; }
+.mini-stat strong { display: block; color: #174f9a; font-size: 15px; }
+.mini-stat small { font-size: 10px; color: #61748a; }
+.section { padding: 34px 0; border-top: 1px solid #d8d6ca; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 22px; }
+.section-index { color: #2d68b2; font-family: Consolas, "Courier New", monospace; font-weight: bold; font-size: 12px; }
+h2.section-title { margin: 3px 0 0; font-size: clamp(25px, 3.6vw, 34px); line-height: 1.15; letter-spacing: -.04em; color: #173866; }
+.section-note { color: #69788a; font-size: 11px; text-align: right; }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.xp-panel { border: 1px solid #c0c6ce; border-radius: 4px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(19,50,89,.05); }
+.panel-title { background: linear-gradient(90deg,#dcecff,#f1f7ff); border-bottom: 1px solid #c4d5e7; padding: 9px 12px; display: flex; align-items: center; gap: 8px; color: #204b83; font-weight: bold; font-size: 13px; }
+.panel-symbol { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 3px; color: white; font-size: 11px; background: linear-gradient(#5da2ef,#2366c8); }
+.panel-body { padding: 14px; color: #394d63; }
+.panel-body p { margin: 0 0 10px; }
+.panel-body p:last-child { margin-bottom: 0; }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 3px; }
+.skill-pill { display: inline-block; padding: 4px 8px; background: #edf4ff; color: #214b83; border: 1px solid #c6d9ee; border-radius: 3px; font-size: 11px; }
+.skill-pill.green { background: #ecf9ec; color: #246b32; border-color: #c5e7c6; }
+.callout { margin-top: 15px; background: #fffde9; border: 1px solid #e9d68d; border-left: 4px solid #e1b52d; padding: 11px 13px; color: #64531c; font-size: 12px; }
+.metric-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 11px; }
+.metric { min-height: 115px; padding: 15px 13px; border: 1px solid #b6c9df; border-radius: 4px; background: linear-gradient(150deg,#fff,#f0f6fd); box-shadow: inset 0 1px white; }
+.metric-value { color: #1356af; font-size: clamp(24px, 3.2vw, 35px); line-height: 1.1; letter-spacing: -.06em; font-weight: bold; }
+.metric p { color: #536982; font-size: 11px; margin: 8px 0 0; line-height: 1.45; }
+.experience-list { display: grid; gap: 14px; }
+.experience-card { border: 1px solid #b6c5d7; border-radius: 4px; background: #fff; box-shadow: 0 3px 8px rgba(25,60,100,.06); overflow: hidden; }
+.experience-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 15px 17px; background: linear-gradient(90deg,#eaf3ff,#fff); border-bottom: 1px solid #d3dfec; }
+.experience-top h3 { color: #1c467f; margin: 0; font-size: 16px; line-height: 1.4; }
+.company { color: #536982; font-size: 12px; margin-top: 4px; }
+.date-chip { flex: 0 0 auto; font-family: Consolas, "Courier New", monospace; font-size: 11px; padding: 4px 7px; color: #28598e; border: 1px solid #b9d0e8; background: #f4f9ff; border-radius: 3px; }
+.experience-body { padding: 14px 18px 16px; }
+.project-label { font-size: 10px; color: #397343; text-transform: uppercase; letter-spacing: .11em; font-weight: bold; }
+.experience-body h4 { font-size: 14px; margin: 2px 0 9px; color: #253e5d; }
+ul.clean-list { padding-left: 18px; margin: 7px 0 12px; color: #455a71; }
+ul.clean-list li { margin: 5px 0; padding-left: 2px; }
+ul.clean-list li::marker { color: #2f75ca; }
+.techline { border-top: 1px dashed #c9d2dc; padding-top: 10px; color: #5d7186; font-size: 11px; }
+.techline strong { color: #284b76; }
+.project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.project-card { display: flex; flex-direction: column; border: 1px solid #aebfd2; border-radius: 4px; background: linear-gradient(#fff,#fbfcff); overflow: hidden; box-shadow: 0 3px 8px rgba(25,60,100,.06); transition: transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 9px 18px rgba(25,60,100,.14); }
+.project-windowbar { padding: 8px 11px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: linear-gradient(90deg,#dfebfa,#f4f8ff); border-bottom: 1px solid #c7d7e8; color: #244e82; font-size: 12px; font-weight: bold; }
+.project-appicon { display: inline-grid; place-items: center; width: 25px; height: 25px; margin-right: 7px; vertical-align: middle; border: 1px solid #a6c2e2; border-radius: 3px; background: linear-gradient(#fff,#dcecff); color: #245fa8; }
+.project-card-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
+.project-card h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.35; color: #153a70; }
+.project-card p { margin: 0 0 13px; color: #52667c; font-size: 13px; }
+.project-card .skill-pills { margin-top: auto; padding-top: 5px; }
+.project-foot { padding: 10px 16px; border-top: 1px solid #e0e4e9; display: flex; justify-content: space-between; align-items: center; gap: 8px; background: #fafcff; font-size: 11px; color: #59708a; }
+.text-link { font-weight: bold; white-space: nowrap; }
+.project-card .details { font-size: 12px; color: #536982; margin-top: 10px; }
+details { border: 1px solid #c5d3e2; background: #f7faff; border-radius: 3px; margin-top: 11px; }
+summary { cursor: pointer; padding: 7px 10px; color: #245a9d; font-weight: bold; font-size: 11px; }
+details p { padding: 0 10px 10px; margin: 0 !important; font-size: 12px !important; }
+.skill-matrix { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.skill-category { border: 1px solid #bdc9d7; border-radius: 4px; background: white; padding: 14px; }
+.skill-category h3 { margin: 0 0 10px; color: #214b82; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.skill-category p { font-size: 12px; color: #5a6d82; margin: 10px 0 0; }
+.skill-category .skill-pills { gap: 6px; }
+.timeline { position: relative; display: grid; gap: 12px; padding-left: 25px; }
+.timeline::before { content: ""; position: absolute; top: 7px; bottom: 7px; left: 8px; width: 2px; background: linear-gradient(#2674d9,#58b96a); }
+.timeline-item { position: relative; border: 1px solid #c0cbd7; background: white; padding: 12px 14px; border-radius: 4px; }
+.timeline-item::before { content: ""; position: absolute; left: -23px; top: 17px; width: 10px; height: 10px; border: 2px solid white; border-radius: 50%; background: #2d70d1; box-shadow: 0 0 0 1px #2d70d1; }
+.timeline-item h3 { margin: 0; color: #214a80; font-size: 14px; }
+.timeline-item .meta { color: #6a7d91; font-size: 11px; margin: 3px 0 5px; }
+.timeline-item p { color: #53677d; font-size: 12px; margin: 0; }
+.education-card { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; padding: 17px; border: 1px solid #c2ccd7; background: linear-gradient(110deg,#fff,#f5f9ff); border-radius: 4px; }
+.education-card h3 { margin: 0; color: #1c477f; font-size: 15px; }
+.education-card p { color: #62758a; font-size: 12px; margin: 5px 0 0; }
+.gpa { align-self: center; padding: 6px 10px; background: #e9f8e8; color: #2e713a; border: 1px solid #c0e3be; border-radius: 3px; white-space: nowrap; font-weight: bold; font-size: 12px; }
+.contact-box { border: 1px solid #7fa6cf; background: linear-gradient(135deg,#e5f2ff,#fff 55%,#e8f8e9); padding: clamp(18px,4vw,32px); border-radius: 5px; box-shadow: inset 0 0 0 3px rgba(255,255,255,.8); display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.contact-box h2 { margin: 0 0 8px; color: #163c73; font-size: clamp(24px,4vw,33px); letter-spacing: -.04em; }
+.contact-box p { color: #4c647c; max-width: 620px; margin: 0; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+.contact-stamp { text-align: center; color: #286139; font-size: 11px; font-weight: bold; border: 2px dashed #7eb78a; border-radius: 50%; padding: 17px 13px; transform: rotate(8deg); }
+.contact-stamp span { display: block; font-size: 25px; line-height: 1.2; }
+.footer { margin-top: 26px; padding-top: 15px; border-top: 1px solid #d7d4c8; display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #718093; font-size: 11px; }
+.footer .made { color: #315d90; }
+.statusbar { display: flex; justify-content: space-between; gap: 12px; padding: 5px 9px; background: #ece9d8; border-top: 1px solid #c5c2b6; color: #5d5b54; font-size: 11px; }
+.statusbar span { border-left: 1px solid #c7c4b8; padding-left: 10px; }
+.taskbar { position: fixed; z-index: 50; bottom: 0; left: 0; width: 100%; min-height: 39px; display: flex; align-items: stretch; gap: 0; padding: 3px 4px 0; border-top: 1px solid #7cb5ec; background: linear-gradient(180deg,#317bda 0%,#245edb 13%,#1c50c7 55%,#1946a7 100%); box-shadow: 0 -2px 8px rgba(0,24,79,.2); color: white; }
+.start-button { flex: 0 0 auto; display: flex; align-items: center; gap: 7px; padding: 4px 19px 4px 11px; border: 1px solid #2c8b33; border-radius: 0 13px 13px 0; background: linear-gradient(180deg,#58d65d,#239c35 47%,#16752b); color: white; font-weight: bold; font-style: italic; text-shadow: 1px 1px 2px #15541f; box-shadow: inset 0 1px 1px rgba(255,255,255,.55), 2px 0 3px rgba(0,0,0,.18); }
+.start-orb { width: 18px; height: 18px; display: inline-grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#fff,#c9ebc6); color: #25833b; font-size: 12px; font-style: normal; text-shadow: none; }
+.task-items { display: flex; align-items: center; flex: 1; gap: 4px; padding-left: 7px; min-width: 0; }
+.task-item { display: flex; align-items: center; gap: 7px; max-width: 220px; min-width: 0; padding: 5px 13px; border: 1px solid #153b95; border-radius: 3px; background: linear-gradient(180deg,#467fd9,#2860c5); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.task-item.active { background: linear-gradient(180deg,#15459d,#477bd2); box-shadow: inset 1px 1px 2px rgba(0,0,0,.24); }
+.system-tray { align-self: stretch; margin-left: auto; display: flex; align-items: center; gap: 8px; padding: 0 12px; background: linear-gradient(180deg,#1685da,#1269b9); border-left: 1px solid #144bab; box-shadow: inset 1px 0 rgba(255,255,255,.22); font-size: 11px; white-space: nowrap; }
+.tray-signal { display: inline-flex; gap: 2px; align-items: end; height: 13px; }
+.tray-signal i { display: block; width: 3px; background: white; border-radius: 1px; }
+.tray-signal i:nth-child(1) { height: 4px; } .tray-signal i:nth-child(2) { height: 7px; } .tray-signal i:nth-child(3) { height: 10px; } .tray-signal i:nth-child(4) { height: 13px; }
+/* CSS-only scroll reveal. If the browser lacks support, content stays visible. */
+.reveal { opacity: 1; transform: none; }
+@supports (animation-timeline: view()) {
+  .reveal { animation: xp-reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 28%; }
+  @keyframes xp-reveal { from { opacity: .12; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media (max-width: 900px) {
+  .window { width: calc(100% - 22px); margin-top: 10px; }
+  .desktop-shortcuts { display: none; }
+  .hero { gap: 22px; }
+  .metric-grid { grid-template-columns: repeat(2,1fr); }
+  .skill-matrix { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 650px) {
+  body { padding: 10px 7px 68px; }
+  .window { width: 100%; margin: 0 auto; border-radius: 6px 6px 2px 2px; }
+  .titlebar { min-height: 35px; }
+  .menubar { padding: 4px 9px; }
+  .menubar span { margin-right: 10px; }
+  .toolbar { gap: 2px; padding: 5px; }
+  .toolbar-btn { padding: 5px 6px; font-size: 11px; }
+  .addressbar { padding: 5px 7px; }
+  .page-content { padding: 19px 14px 23px; }
+  .hero { grid-template-columns: 1fr; min-height: 0; gap: 26px; padding: 13px 0 27px; }
+  .profile-card { max-width: 380px; width: 100%; justify-self: center; transform: none; }
+  .intro-grid, .project-grid, .skill-matrix { grid-template-columns: 1fr; }
+  .section { padding: 26px 0; }
+  .section-heading { align-items: flex-start; }
+  .section-note { max-width: 100px; }
+  .experience-top { flex-direction: column; gap: 8px; }
+  .date-chip { align-self: flex-start; }
+  .metric-grid { gap: 8px; }
+  .metric { min-height: 102px; padding: 12px; }
+  .contact-box { grid-template-columns: 1fr; }
+  .contact-stamp { display: none; }
+  .footer { flex-direction: column; align-items: flex-start; }
+  .task-item { padding: 5px 8px; max-width: 145px; }
+  .system-tray { padding: 0 8px; gap: 5px; }
+  .taskbar { min-height: 37px; }
+}
+@media (max-width: 390px) {
+  .task-item { max-width: 105px; }
+  .system-tray .tray-label { display: none; }
+  .metric-value { font-size: 25px; }
+  .window-controls span { width: 19px; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Nishant Kumbhar</h1>
-    <p>.NET Core Developer | Backend & API Specialist | Automation & Analytics</p>
-  </header>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="desktop-shortcuts" aria-label="Desktop shortcuts">
+  <a href="#about"><span class="desktop-icon" aria-hidden="true">🖥️</span><span>My Profile</span></a>
+  <a href="#projects"><span class="desktop-icon" aria-hidden="true">📁</span><span>Projects</span></a>
+  <a href="#contact"><span class="desktop-icon" aria-hidden="true">✉️</span><span>Contact</span></a>
+</div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#code">Code Example</a>
-    <a href="#contact">Contact</a>
+<div class="window" id="top">
+  <div class="titlebar">
+    <div class="titlebar-name"><span class="app-mark" aria-hidden="true">N</span><span>Nishant Kumbhar — Portfolio.exe</span></div>
+    <div class="window-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></div>
+  </div>
+  <div class="menubar" aria-label="Window menu"><span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>F</u>avorites</span><span><u>T</u>ools</span><span><u>H</u>elp</span></div>
+  <nav class="toolbar" aria-label="Main navigation">
+    <a class="toolbar-btn" href="#about">🏠 Home</a>
+    <a class="toolbar-btn" href="#experience">💼 Experience</a>
+    <a class="toolbar-btn" href="#projects">📂 Projects</a>
+    <a class="toolbar-btn" href="#skills">🧰 Skills</a>
+    <a class="toolbar-btn" href="#education">🎓 Education</a>
+    <a class="toolbar-btn" href="#contact">✉️ Contact</a>
   </nav>
+  <div class="addressbar"><span class="address-label">Address</span><div class="address-field"><strong>🌐</strong> C:\Users\Nishant\Portfolio\index.html</div><span>Go</span></div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a <strong>.NET Core Developer</strong> focused on <strong>backend technologies</strong> and <strong>API development</strong>.
-        My work includes delivering scalable solutions, automation with <strong>Blue Prism</strong> and <strong>Power Automate</strong>, 
-        and business analytics with <strong>Power BI</strong>.  
-      </p>
-    </div>
-  </section>
+  <main id="main" class="page-content">
+    <section class="hero" id="about">
+      <div class="hero-copy">
+        <div class="kicker">Available for backend engineering opportunities</div>
+        <h1>Hi, I'm Nishant<span>Kumbhar.</span></h1>
+        <p class="hero-lede">I build <strong>reliable .NET backends</strong>, practical REST APIs, and data-heavy applications—with a focus on clean code, performance, and the details that make software dependable in production.</p>
+        <div class="hero-actions">
+          <a class="xp-button primary" href="#projects">▣ Explore my work</a>
+          <a class="xp-button" href="#contact">✉ Get in touch</a>
+          <a class="xp-button" href="https://github.com/NishantKumbhar" target="_blank" rel="noopener noreferrer">⌘ GitHub ↗</a>
+        </div>
+        <div class="status-line"><span>Pune, India</span><span>C# / ASP.NET Core</span><span>Backend + Cloud</span></div>
+      </div>
+      <aside class="profile-card" aria-label="Profile summary">
+        <div class="profile-header"><span>USER PROFILE</span><span><span class="online-dot"></span>Online</span></div>
+        <div class="avatar" aria-hidden="true">NK</div>
+        <h2>Nishant Kumbhar</h2>
+        <p class="role">.NET Backend Engineer</p>
+        <div class="mini-stat-grid">
+          <div class="mini-stat"><strong>REST APIs</strong><small>Design & integration</small></div>
+          <div class="mini-stat"><strong>SQL Server</strong><small>Queries & data</small></div>
+          <div class="mini-stat"><strong>ASP.NET Core</strong><small>Backend services</small></div>
+          <div class="mini-stat"><strong>Azure</strong><small>Cloud fundamentals</small></div>
+        </div>
+      </aside>
+    </section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="card">
-      <table class="skills">
-        <tr>
-          <th>Category</th>
-          <th>Technologies</th>
-        </tr>
-        <tr>
-          <td>Core Development</td>
-          <td>C#, .NET Core, ASP.NET Web API, Entity Framework, SQL Server</td>
-        </tr>
-        <tr>
-          <td>Frontend</td>
-          <td>HTML, CSS, JavaScript, Angular/React (learning)</td>
-        </tr>
-        <tr>
-          <td>Automation</td>
-          <td>Blue Prism, Power Automate</td>
-        </tr>
-        <tr>
-          <td>Analytics</td>
-          <td>Power BI, Reporting solutions</td>
-        </tr>
-        <tr>
-          <td>Other</td>
-          <td>Git/GitHub, CI/CD, Azure Cloud (learning)</td>
-        </tr>
-      </table>
-    </div>
-  </section>
+    <section class="section reveal" aria-labelledby="snapshot-title">
+      <div class="section-heading"><div><div class="section-index">01 / QUICK LOOK</div><h2 class="section-title" id="snapshot-title">A little about my work</h2></div><div class="section-note">System properties<br>Professional summary</div></div>
+      <div class="intro-grid">
+        <article class="xp-panel">
+          <div class="panel-title"><span class="panel-symbol">✦</span> Engineering mindset</div>
+          <div class="panel-body"><p>My focus is backend development with C#, .NET, ASP.NET Core Web API, and SQL Server. I enjoy taking a business workflow and shaping it into APIs and data flows that are understandable, testable, and maintainable.</p><p>I care about practical engineering: validating inputs, handling failures predictably, protecting data, measuring query performance, and keeping responsibilities clear.</p></div>
+        </article>
+        <article class="xp-panel">
+          <div class="panel-title"><span class="panel-symbol">⚙</span> What I bring</div>
+          <div class="panel-body"><div class="skill-pills"><span class="skill-pill">C#</span><span class="skill-pill">.NET / ASP.NET Core</span><span class="skill-pill">REST API design</span><span class="skill-pill">SQL Server</span><span class="skill-pill">EF Core</span><span class="skill-pill">Dapper</span><span class="skill-pill">Angular</span><span class="skill-pill">Azure</span><span class="skill-pill">CI/CD</span><span class="skill-pill">Serilog</span></div><div class="callout"><strong>My principle:</strong> make the correct path easy to follow—and make failures visible, diagnosable, and safe.</div></div>
+        </article>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <p><strong>Enterprise API Development:</strong> Designed and implemented REST APIs for automation and integrations.</p>
-    </div>
-    <div class="card">
-      <p><strong>Business Dashboards:</strong> Built interactive Power BI dashboards to track KPIs and automation performance.</p>
-    </div>
-    <div class="card">
-      <p><strong>Automation Solutions:</strong> Developed end-to-end Blue Prism bots for repetitive business processes.</p>
-    </div>
-    <div class="card">
-      <p><strong>Process Workflows:</strong> Implemented approval workflows using Power Automate and SharePoint.</p>
-    </div>
-  </section>
+    <section class="section reveal" aria-labelledby="impact-title">
+      <div class="section-heading"><div><div class="section-index">02 / IMPACT</div><h2 class="section-title" id="impact-title">Engineering with outcomes</h2></div><div class="section-note">Selected work<br>Reported project outcomes</div></div>
+      <div class="metric-grid">
+        <article class="metric"><div class="metric-value">5s → 1.5s</div><p>SQL query and data-access optimization on a response-time-critical API path.</p></article>
+        <article class="metric"><div class="metric-value">~70–76%</div><p>Reported reduction in response time after query and database access improvements.</p></article>
+        <article class="metric"><div class="metric-value">20%</div><p>Improvement in API processing reliability through validation and robust error handling.</p></article>
+        <article class="metric"><div class="metric-value">3 layers</div><p>API, service, and repository separation in a maintainable backend project structure.</p></article>
+      </div>
+      <p style="font-size:11px;color:#718093;margin:10px 2px 0">Performance figures are based on the project details provided and should be retained only if you can explain the measurement method and baseline in an interview.</p>
+    </section>
 
-  <section id="code">
-    <h2>Code Example</h2>
-    <div class="card">
-      <p>
-        Every developer has encountered this. If you have not, you probably have not written enough code yet:
-      </p>
-      <pre>
-System.NullReferenceException: Object reference not set to an instance of an object.
-      </pre>
-      <p>
-        I ensure production stability by handling exceptions, null checks, and applying logging practices.
-      </p>
-    </div>
-  </section>
+    <section class="section reveal" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><div><div class="section-index">03 / CAREER</div><h2 class="section-title" id="experience-title">Work experience</h2></div><div class="section-note">Professional history<br>Selected responsibilities</div></div>
+      <div class="experience-list">
+        <article class="experience-card">
+          <div class="experience-top"><div><h3>Software Engineer</h3><div class="company">Cognizant Technology Solutions · Pune, India</div></div><span class="date-chip">Dec 2023 — Present</span></div>
+          <div class="experience-body"><div class="project-label">Client / Project</div><h4>Wells Fargo · ENRICH — Fair Lending & Regulatory Data Platform</h4>
+            <ul class="clean-list">
+              <li>Developed and maintained C# and ASP.NET Core REST API integrations supporting data-processing workflows for fair-lending and regulatory reporting.</li>
+              <li>Integrated downstream REST services with request validation, exception handling, and dependable data exchange, improving API processing reliability by a reported 20%.</li>
+              <li>Optimized SQL queries and data-access patterns, reducing response time from approximately 5 seconds to 1.5–2 seconds on targeted API paths.</li>
+              <li>Worked with SSIS ETL workflows, AutoSys batch scheduling, and Apache Kafka for event-driven data integration across upstream and downstream systems.</li>
+              <li>Applied modular design, clean coding practices, and defensive programming to make backend integrations easier to support and troubleshoot.</li>
+            </ul>
+            <div class="techline"><strong>Stack:</strong> C#, .NET, ASP.NET Core Web API, SQL Server, SSIS, AutoSys, Kafka, REST</div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-top"><div><h3>Software Engineer</h3><div class="company">Exec Software Solutions · Karad, India</div></div><span class="date-chip">Aug 2023 — Nov 2023</span></div>
+          <div class="experience-body"><p style="margin:0 0 8px;color:#455a71">Worked as a full-time .NET developer, contributing to the design and development of Windows-based business applications.</p><ul class="clean-list"><li>Built and maintained application features around business requirements, UI behavior, and data operations.</li><li>Worked across application logic and SQL-backed workflows while improving familiarity with debugging and maintainable code.</li></ul><div class="techline"><strong>Stack:</strong> C#, .NET, Windows Forms, SQL Server</div></div>
+        </article>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: your-email@example.com</p>
-      <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
-    </div>
-  </section>
+    <section class="section reveal" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div><div class="section-index">04 / BUILT & LEARNED</div><h2 class="section-title" id="projects-title">Featured projects</h2></div><div class="section-note">Personal engineering<br>Source code & architecture</div></div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-windowbar"><span><span class="project-appicon">↗</span>Project / 001</span><span>API</span></div>
+          <div class="project-card-body"><h3>URL Shortener API</h3><p>A RESTful service that converts long URLs into compact short links and resolves them to their original destinations. Built as a hands-on backend project focused on API design and reliable data access.</p><div class="skill-pills"><span class="skill-pill">C#</span><span class="skill-pill">ASP.NET Core Web API</span><span class="skill-pill">EF Core</span><span class="skill-pill">SQL Server</span></div><details><summary>Architecture notes</summary><p>Controller → service → repository separation; short-code generation and redirect resolution; database indexing considerations; input validation and predictable not-found behavior.</p></details></div>
+          <div class="project-foot"><span>Personal project</span><a class="text-link" href="https://github.com/NishantKumbhar" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-windowbar"><span><span class="project-appicon">▤</span>Project / 002</span><span>FULL STACK</span></div>
+          <div class="project-card-body"><h3>Employee Management App</h3><p>A CRUD application built to practice end-to-end full-stack delivery: structured APIs, relational data, and an Angular interface for employee operations.</p><div class="skill-pills"><span class="skill-pill">ASP.NET Core</span><span class="skill-pill">Angular</span><span class="skill-pill">SQL Server</span><span class="skill-pill">EF Core</span></div><details><summary>Architecture notes</summary><p>Typed API contracts, reusable service logic, database constraints, filtering and sorting, pagination, and clear separation between the frontend and backend.</p></details></div>
+          <div class="project-foot"><span>Learning project</span><a class="text-link" href="https://github.com/NishantKumbhar" target="_blank" rel="noopener noreferrer">Explore repositories ↗</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-windowbar"><span><span class="project-appicon">▦</span>Project / 003</span><span>DATABASE</span></div>
+          <div class="project-card-body"><h3>SQL Performance Lab</h3><p>A practice space for understanding query plans, indexes, joins, data modeling, pagination, and the trade-offs between readable queries and efficient execution.</p><div class="skill-pills"><span class="skill-pill">SQL Server</span><span class="skill-pill">Indexing</span><span class="skill-pill">Execution plans</span><span class="skill-pill">Data modeling</span></div><details><summary>Engineering focus</summary><p>Measure before optimizing; inspect query plans; avoid unnecessary round trips; and verify that indexes improve the intended workload without imposing excessive write cost.</p></details></div>
+          <div class="project-foot"><span>Technical practice</span><a class="text-link" href="https://github.com/NishantKumbhar" target="_blank" rel="noopener noreferrer">Browse GitHub ↗</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-windowbar"><span><span class="project-appicon">☁</span>Project / 004</span><span>CLOUD</span></div>
+          <div class="project-card-body"><h3>.NET + Azure Deployment Lab</h3><p>A learning project exploring how to package, configure, and deploy an ASP.NET Core API, with attention to environment settings, observability, and cloud cost awareness.</p><div class="skill-pills"><span class="skill-pill">Azure App Service</span><span class="skill-pill">Configuration</span><span class="skill-pill">CI/CD</span><span class="skill-pill">Logging</span></div><details><summary>Engineering focus</summary><p>Keep secrets outside source control, separate environment configuration, add health checks and logs, and shut down or remove test resources when they're no longer needed.</p></details></div>
+          <div class="project-foot"><span>Cloud learning lab</span><a class="text-link" href="https://github.com/NishantKumbhar" target="_blank" rel="noopener noreferrer">Browse GitHub ↗</a></div>
+        </article>
+      </div>
+      <div class="callout"><strong>Open-source note:</strong> Project links currently point to your GitHub profile. Replace them with each repository’s direct URL as you publish or finalize the projects.</div>
+    </section>
 
-  <footer>
-    <p>© 2025 Nishant Kumbhar | Professional Portfolio</p>
-  </footer>
+    <section class="section reveal" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading"><div><div class="section-index">05 / TOOLBOX</div><h2 class="section-title" id="skills-title">Technical skills</h2></div><div class="section-note">Tools I work with<br>Grouped by purpose</div></div>
+      <div class="skill-matrix">
+        <article class="skill-category"><h3>⌘ Backend development</h3><div class="skill-pills"><span class="skill-pill">C#</span><span class="skill-pill">.NET</span><span class="skill-pill">ASP.NET Core</span><span class="skill-pill">REST APIs</span><span class="skill-pill">EF Core</span><span class="skill-pill">Dapper</span><span class="skill-pill">LINQ</span></div><p>API contracts, dependency injection, validation, exception handling, and maintainable service logic.</p></article>
+        <article class="skill-category"><h3>▤ Data & integration</h3><div class="skill-pills"><span class="skill-pill">SQL Server</span><span class="skill-pill">T-SQL</span><span class="skill-pill">Indexes</span><span class="skill-pill">SSIS</span><span class="skill-pill">Kafka</span><span class="skill-pill">AutoSys</span></div><p>Relational modeling, query optimization, ETL workflows, and backend data integration.</p></article>
+        <article class="skill-category"><h3>🌐 Frontend</h3><div class="skill-pills"><span class="skill-pill">Angular</span><span class="skill-pill">TypeScript</span><span class="skill-pill">HTML</span><span class="skill-pill">CSS</span><span class="skill-pill">Bootstrap</span></div><p>Building straightforward interfaces and collaborating across API/frontend boundaries.</p></article>
+        <article class="skill-category"><h3>☁ Cloud & delivery</h3><div class="skill-pills"><span class="skill-pill">Microsoft Azure</span><span class="skill-pill">Azure DevOps</span><span class="skill-pill">CI/CD</span><span class="skill-pill">Docker</span></div><p>Deployment basics, environment configuration, and delivery pipelines.</p></article>
+        <article class="skill-category"><h3>🛠 Developer tools</h3><div class="skill-pills"><span class="skill-pill">Visual Studio</span><span class="skill-pill">VS Code</span><span class="skill-pill">SSMS</span><span class="skill-pill">Git</span><span class="skill-pill">GitHub</span></div><p>Debugging, source control, database inspection, and iterative development.</p></article>
+        <article class="skill-category"><h3>✅ Engineering practices</h3><div class="skill-pills"><span class="skill-pill green">Clean code</span><span class="skill-pill green">Code review</span><span class="skill-pill green">API security</span><span class="skill-pill green">Logging</span><span class="skill-pill green">Agile</span></div><p>Defensive coding, clear boundaries, production diagnostics, and continuous learning.</p></article>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="approach-title">
+      <div class="section-heading"><div><div class="section-index">06 / HOW I THINK</div><h2 class="section-title" id="approach-title">Beyond “it works on my machine”</h2></div><div class="section-note">Quality bar<br>Production mindset</div></div>
+      <div class="timeline">
+        <article class="timeline-item"><h3>01. Clear responsibilities</h3><div class="meta">Maintainability</div><p>Keep controllers thin, place business decisions in the appropriate layer, and make dependencies explicit through dependency injection.</p></article>
+        <article class="timeline-item"><h3>02. Data access with intent</h3><div class="meta">Performance & correctness</div><p>Choose EF Core or Dapper based on the query and team needs—not fashion. Inspect SQL, avoid N+1 patterns, use appropriate indexes, and paginate large result sets.</p></article>
+        <article class="timeline-item"><h3>03. Fail safely and observably</h3><div class="meta">Reliability & security</div><p>Validate input at the boundary, avoid leaking internal exception details, log useful context without secrets or sensitive data, and return consistent API responses.</p></article>
+        <article class="timeline-item"><h3>04. Measure, then improve</h3><div class="meta">Evidence over guesswork</div><p>Use baselines and repeatable measurements to identify bottlenecks. An optimization is only valuable when correctness remains intact and the improvement can be demonstrated.</p></article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="education" aria-labelledby="education-title">
+      <div class="section-heading"><div><div class="section-index">07 / EDUCATION</div><h2 class="section-title" id="education-title">Education</h2></div><div class="section-note">Academic foundation</div></div>
+      <article class="education-card"><div><h3>Bachelor of Engineering — Computer Engineering</h3><p>Savitribai Phule Pune University, Pune</p><p>Aug 2019 — Aug 2023</p></div><div class="gpa">CGPA · 9.02 / 10</div></article>
+    </section>
+
+    <section class="section reveal" id="contact" aria-labelledby="contact-title">
+      <div class="contact-box">
+        <div><div class="section-index">08 / LET'S CONNECT</div><h2 id="contact-title">Have a good problem to solve?</h2><p>I'm interested in backend engineering, API development, data-intensive systems, and teams that care about dependable software. Reach out and let's talk.</p><div class="contact-links"><a class="xp-button primary" href="mailto:nishantsk210@gmail.com">✉ Email me</a><a class="xp-button" href="https://www.linkedin.com/in/nishant-kumbhar-7b9277223" target="_blank" rel="noopener noreferrer">in LinkedIn ↗</a><a class="xp-button" href="https://github.com/NishantKumbhar" target="_blank" rel="noopener noreferrer">⌘ GitHub ↗</a></div></div>
+        <div class="contact-stamp" aria-hidden="true"><span>✦</span>OPEN TO<br>GOOD WORK</div>
+      </div>
+    </section>
+    <footer class="footer"><span>© Nishant Kumbhar · Portfolio</span><span class="made">Made with HTML + CSS — no JavaScript required.</span><a href="#top">Back to top ↑</a></footer>
+  </main>
+  <div class="statusbar"><span>Done</span><span>HTML document</span><span>Best viewed with curiosity :)</span></div>
+</div>
+
+<div class="taskbar" aria-label="Windows-inspired taskbar">
+  <a class="start-button" href="#top"><span class="start-orb" aria-hidden="true">✿</span> start</a>
+  <div class="task-items"><a href="#top" class="task-item active"><span aria-hidden="true">🖥️</span> Nishant — Portfolio</a><a href="#projects" class="task-item"><span aria-hidden="true">📁</span> Projects</a></div>
+  <div class="system-tray"><span class="tray-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="tray-label">Portfolio online</span><span aria-hidden="true">◉</span></div>
+</div>
 </body>
 </html>
